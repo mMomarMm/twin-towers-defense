@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public Transform EnemyTransf;
     public ParticleSystem DollarEffect;
     public int coins;
     public bool KonamiCode;
@@ -84,7 +85,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator DollarEffectV()
     {
-        Instantiate(DollarEffect);
+        Instantiate(DollarEffect, EnemyTransf);
         yield return new WaitForSeconds(1);
     }
 }
