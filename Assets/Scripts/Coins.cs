@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 public class Coins : MonoBehaviour
 {
+    public static bool Coinsget = false;
     public static int coins;
     public int newcoins;
     public bool enemy_destroyed;
@@ -21,6 +22,10 @@ public class Coins : MonoBehaviour
             if (newcoins >= 1)
             {
                 newcoins -= 1;
+            }
+            if (newcoins >= 1)
+            {
+                Coinsget = true;
             }
             coins += newcoins;
         }

@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        Coinsget = Coins.Coinsget;
         KonamiCode = GameManager.KonamiCode;
         x_axis = transform.position.x;
         spriteRender = GetComponent<SpriteRenderer>();
@@ -70,11 +71,20 @@ public class Enemy : MonoBehaviour
             enemy_destroyed = true;
             speed = 0;
             difficulty = 0;
+            if (Coinsget)
+            {
+                StartCoroutine(DollarEffectV());
+            }
         }
         else
         {
             enemy_allive = true;
             enemy_destroyed = false;
         } 
+    }
+    IEnumerator DollarEffectV()
+    {
+        Instantiate(DollarEffect);
+        yield return new WaitForSeconds(1);
     }
 }
