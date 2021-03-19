@@ -145,7 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cabb5e4c377021b4598089efff10b4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DollarEffect: {fileID: 8525999201655399217, guid: 22c60d3a090000d41816edbcfb1c7584, type: 3}
   coins: 0
+  KonamiCode: 0
   enemy_allive: 1
   gameover: 0
   rb: {fileID: 4810987872009332803}

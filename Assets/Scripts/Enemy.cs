@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public ParticleSystem DollarEffect;
     public int coins;
     public bool KonamiCode;
     private SpriteRenderer spriteRender;
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
     public float difficulty;
     private float x_axis;
     public Animation explosion;
+    public bool Coinsget;
 
     void Start()
     {
@@ -51,12 +53,10 @@ public class Enemy : MonoBehaviour
         {
             spriteRender.flipY = true;
         }
-
         if (x_axis < 0)
         {
             spriteRender.flipY = false;
         }
-
         if (gameover) 
         {
             Destroy(gameObject);
