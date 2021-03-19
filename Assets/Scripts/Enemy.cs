@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Transform EnemyTransf;
+    public int newcoins;
     public ParticleSystem DollarEffect;
     public int coins;
     public bool KonamiCode;
@@ -12,14 +13,12 @@ public class Enemy : MonoBehaviour
     public static bool enemy_destroyed = false;
     public bool enemy_allive = true;
     public bool gameover;
-    public static int newcoins;
     public Rigidbody2D rb;
     public float speed = 2f;
     public Transform Torres;
     public float difficulty;
     private float x_axis;
     public Animation explosion;
-    public bool Coinsget;
 
     void Start()
     {
@@ -31,26 +30,26 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        Coinsget = Coins.Coinsget;
+        enemy_destroyed = false;
         KonamiCode = GameManager.KonamiCode;
         x_axis = transform.position.x;
         spriteRender = GetComponent<SpriteRenderer>();
         difficulty = AddTimer.difficulty;
         gameover = GameManager.gameover;
 
+        newcoins = Coins.newcoins;
+        if (newcoins >= 1)
+        {
+            Instantiate(DollarEffect, EnemyTransf);
+        }
         if (enemy_allive)
         {
             transform.position = Vector2.MoveTowards(transform.position, Torres.position, speed * Time.deltaTime);
         }
-
         Vector3 difference = Torres.position - transform.position;
-
         difference.Normalize();
-
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
-
         if (x_axis > 0)
         {
             spriteRender.flipY = true;
@@ -72,10 +71,7 @@ public class Enemy : MonoBehaviour
             enemy_destroyed = true;
             speed = 0;
             difficulty = 0;
-            if (Coinsget)
-            {
-                StartCoroutine(DollarEffectV());
-            }
+            
         }
         else
         {
@@ -83,9 +79,5 @@ public class Enemy : MonoBehaviour
             enemy_destroyed = false;
         } 
     }
-    IEnumerator DollarEffectV()
-    {
-        Instantiate(DollarEffect, EnemyTransf);
-        yield return new WaitForSeconds(1);
-    }
+    
 }

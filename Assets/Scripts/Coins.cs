@@ -2,9 +2,8 @@
 using UnityEngine.UI;
 public class Coins : MonoBehaviour
 {
-    public static bool Coinsget = false;
     public static int coins;
-    public int newcoins;
+    public static int newcoins;
     public bool enemy_destroyed;
     public Text dollarsText;
 
@@ -23,11 +22,10 @@ public class Coins : MonoBehaviour
             {
                 newcoins -= 1;
             }
-            if (newcoins >= 1)
-            {
-                Coinsget = true;
-            }
             coins += newcoins;
+        } else
+        {
+            enemy_destroyed = false;
         }
 
         dollarsText.text = coins.ToString();
