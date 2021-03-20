@@ -19,10 +19,9 @@ public class Torres : MonoBehaviour
     {
         TorresPosition = transform.position;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Aviones"))
+        if (other.tag == "Aviones")
         {
             gameover = true;
             Instantiate(smokeleft, smokeleftw.position, transform.rotation);

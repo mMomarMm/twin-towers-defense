@@ -60,7 +60,6 @@ public class Enemy : MonoBehaviour
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
         
-        
         //rotation
         if (x_axis > 0)
         {
@@ -75,15 +74,14 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Balas"))
+        if (other.tag == "Balas")
         {
             enemy_allive = false;
             enemy_destroyed = true;
             speed = 0;
             difficulty = 0;
-            
         }
         else
         {
