@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     public float difficulty;
     private float x_axis;
     public Animation explosion;
-    public int Odifficulty = 0.3;
+    public float Odifficulty = 0.3f;
 
     void Start()
     {
