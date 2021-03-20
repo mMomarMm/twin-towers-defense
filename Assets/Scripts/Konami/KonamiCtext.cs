@@ -7,11 +7,6 @@ public class KonamiCodetext : MonoBehaviour
 {
     public bool KonamiCode;
     public Text ON_OFF;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

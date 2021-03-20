@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     public float difficulty;
     private float x_axis;
     public Animation explosion;
+    public int Odifficulty = 0.3;
 
     void Start()
     {
@@ -30,13 +31,17 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Odifficulty != difficulty)
+        {
+            speed += (Odifficulty - difficulty);
+            Debug.Log(speed);
+        }
         enemy_destroyed = false;
         KonamiCode = GameManager.KonamiCode;
         x_axis = transform.position.x;
         spriteRender = GetComponent<SpriteRenderer>();
         difficulty = AddTimer.difficulty;
         gameover = GameManager.gameover;
-
         newdollars = Dollar.newdollars;
         if (newdollars >= 1)
         {

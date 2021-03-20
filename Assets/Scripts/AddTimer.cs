@@ -26,8 +26,17 @@ public class AddTimer : MonoBehaviour
             float t = Time.time - timeStart;
             string minutes = ((int) t / 60).ToString();
             string seconds = (t % 60).ToString("F1");
-
             textAddtimer.text = minutes + ":" + seconds;
+            if (t/60 == 1)
+            {
+                Debug.Log("1");
+                Invoke("DifficultyTimes2", 0);
+            }
         }
     }
+
+    private void DifficultyTimes2()
+    {
+        difficulty *= 2;
+    } 
 }
