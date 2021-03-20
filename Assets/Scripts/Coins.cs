@@ -17,7 +17,7 @@ public class Coins : MonoBehaviour
         enemy_destroyed = Enemy.enemy_destroyed;
         if (enemy_destroyed)
         {
-            newcoins = Random.Range(3, 0);
+            newcoins = Random.Range(3, -1);
             if (newcoins >= 1)
             {
                 newcoins -= 1;
@@ -25,9 +25,9 @@ public class Coins : MonoBehaviour
             coins += newcoins;
         } else
         {
+            newcoins = 0;
             enemy_destroyed = false;
         }
-
         dollarsText.text = coins.ToString();
     }
 }
