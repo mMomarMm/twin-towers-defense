@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public Transform EnemyTransf;
     public int newdollars;
-    public ParticleSystem DollarEffect;
+    public GameObject DollarEffect;
     public int dollars;
     public bool KonamiCode;
     private SpriteRenderer spriteRender;
@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
         //efects
         if (newdollars >= 1)
         {
+            Debug.Log(EnemyTransf);
             Instantiate(DollarEffect, EnemyTransf);
         }
 
