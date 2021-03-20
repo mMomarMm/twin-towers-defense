@@ -5,9 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Transform EnemyTransf;
-    public int newcoins;
+    public int newdollars;
     public ParticleSystem DollarEffect;
-    public int coins;
+    public int dollars;
     public bool KonamiCode;
     private SpriteRenderer spriteRender;
     public static bool enemy_destroyed = false;
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     {
     Torres = GameObject.FindGameObjectWithTag("Torres").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
-        coins = Coins.coins;
+        dollars = Dollar.dollars;
         speed += difficulty;
     }
 
@@ -37,8 +37,8 @@ public class Enemy : MonoBehaviour
         difficulty = AddTimer.difficulty;
         gameover = GameManager.gameover;
 
-        newcoins = Coins.newcoins;
-        if (newcoins >= 1)
+        newdollars = Dollar.newdollars;
+        if (newdollars >= 1)
         {
             Instantiate(DollarEffect, EnemyTransf);
         }
