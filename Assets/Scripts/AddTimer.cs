@@ -23,20 +23,31 @@ public class AddTimer : MonoBehaviour
     {
         if (gameover != true)
         {
+            //addtimer
             float t = Time.time - timeStart;
             string minutes = ((int) t / 60).ToString();
             string seconds = (t % 60).ToString("F1");
             textAddtimer.text = minutes + ":" + seconds;
-            if (t/60 == 1)
+            
+            //difficulty
+            Debug.Log(difficulty + "difficulty");
+            Debug.Log(t + "time");
+            if (t/60 > 1)
             {
-                Debug.Log("1");
-                Invoke("DifficultyTimes2", 0);
+                difficulty = 0.3f;
+                if (t / 60 > 2)
+                {
+                    difficulty = 0.6f;
+                    if (t / 60 > 3)
+                    {
+                        difficulty = 0.9f;
+                        if (t / 60 > 4)
+                        {
+                            difficulty = 1.2f;
+                        }
+                    }
+                }
             }
         }
     }
-
-    private void DifficultyTimes2()
-    {
-        difficulty *= 2;
-    } 
 }

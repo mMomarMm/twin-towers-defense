@@ -130,7 +130,7 @@ TextureImporter:
         width: 47
         height: 85
       alignment: 9
-      pivot: {x: 0.46, y: 0.5}
+      pivot: {x: 0.4599999, y: 0.7523461}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -177,12 +177,12 @@ TextureImporter:
       name: laser-sprite-png-5_1
       rect:
         serializedVersion: 2
-        x: 305
-        y: 321
+        x: 306
+        y: 318
         width: 47
         height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.50000066, y: 0.7138701}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

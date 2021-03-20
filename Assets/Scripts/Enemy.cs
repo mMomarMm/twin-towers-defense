@@ -31,11 +31,6 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Odifficulty != difficulty)
-        {
-            speed += (Odifficulty - difficulty);
-            Debug.Log(speed);
-        }
         enemy_destroyed = false;
         KonamiCode = GameManager.KonamiCode;
         x_axis = transform.position.x;
@@ -43,9 +38,18 @@ public class Enemy : MonoBehaviour
         difficulty = AddTimer.difficulty;
         gameover = GameManager.gameover;
         newdollars = Dollar.newdollars;
+        
+        //efects
         if (newdollars >= 1)
         {
             Instantiate(DollarEffect, EnemyTransf);
+        }
+
+        //movement
+        if (Odifficulty != difficulty)
+        {
+            speed += Odifficulty - difficulty;
+            Debug.Log(speed + "speed");
         }
         if (enemy_allive)
         {
@@ -55,6 +59,9 @@ public class Enemy : MonoBehaviour
         difference.Normalize();
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+        
+        
+        //rotation
         if (x_axis > 0)
         {
             spriteRender.flipY = true;
