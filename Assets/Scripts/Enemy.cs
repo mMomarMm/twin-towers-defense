@@ -19,7 +19,6 @@ public class Enemy : MonoBehaviour
     public float difficulty;
     private float x_axis;
     public Animation explosion;
-    public float Odifficulty = 0.3f;
 
     void Start()
     {
@@ -42,12 +41,12 @@ public class Enemy : MonoBehaviour
         //efects
         if (newdollars >= 1)
         {
-            Debug.Log(EnemyTransf);
             Instantiate(DollarEffect, EnemyTransf);
         }
-
+        Debug.Log(EnemyTransf);
         //movement
-        if (Odifficulty != difficulty)
+        Debug.Log("0.3 - " + difficulty);
+        if (difficulty != 0.3f)
         {
             speed += Odifficulty - difficulty;
             Debug.Log(speed + "speed");

@@ -30,11 +30,8 @@ public class AddTimer : MonoBehaviour
             textAddtimer.text = minutes + ":" + seconds;
             
             //difficulty
-            Debug.Log(difficulty + "difficulty");
-            Debug.Log(t + "time");
             if (t/60 > 1)
             {
-                difficulty = 0.3f;
                 if (t / 60 > 2)
                 {
                     difficulty = 0.6f;
