@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
     Torres = GameObject.FindGameObjectWithTag("Torres").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         dollars = Dollar.dollars;
-        speed += difficulty;
     }
 
     void FixedUpdate()
@@ -48,7 +47,7 @@ public class Enemy : MonoBehaviour
         Debug.Log("0.3 - " + difficulty);
         if (difficulty != 0.3f)
         {
-            speed += Odifficulty - difficulty;
+            speed += difficulty;
             Debug.Log(speed + "speed");
         }
         if (enemy_allive)
