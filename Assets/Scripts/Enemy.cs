@@ -25,6 +25,11 @@ public class Enemy : MonoBehaviour
     Torres = GameObject.FindGameObjectWithTag("Torres").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         dollars = Dollar.dollars;
+        spriteRender = GetComponent<SpriteRenderer>();
+        do
+        {
+            transform.position = Vector2.MoveTowards(transform.position, Torres.position, speed * Time.deltaTime);
+        } while (enemy_allive);
     }
 
     void FixedUpdate()
@@ -32,7 +37,6 @@ public class Enemy : MonoBehaviour
         enemy_destroyed = false;
         KonamiCode = GameManager.KonamiCode;
         x_axis = transform.position.x;
-        spriteRender = GetComponent<SpriteRenderer>();
         difficulty = AddTimer.difficulty;
         gameover = GameManager.gameover;
         newdollars = Dollar.newdollars;
@@ -44,15 +48,10 @@ public class Enemy : MonoBehaviour
         }
         Debug.Log(EnemyTransf);
         //movement
-        Debug.Log("0.3 - " + difficulty);
         if (difficulty != 0.3f)
         {
-            speed += difficulty;
+            speed += 0.3f;
             Debug.Log(speed + "speed");
-        }
-        if (enemy_allive)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, Torres.position, speed * Time.deltaTime);
         }
         Vector3 difference = Torres.position - transform.position;
         difference.Normalize();
@@ -82,11 +81,5 @@ public class Enemy : MonoBehaviour
             speed = 0;
             difficulty = 0;
         }
-        else
-        {
-            enemy_allive = true;
-            enemy_destroyed = false;
-        } 
     }
-    
 }

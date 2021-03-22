@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static bool gameover = false;
     public static bool KonamiCode = false;
-    
+    public static bool paused;
     //gameover
     private void Update()
     {
