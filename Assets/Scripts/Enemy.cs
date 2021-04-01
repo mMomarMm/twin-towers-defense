@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour
     public int newdollars;
     public GameObject DollarEffect;
     public int dollars;
-    public bool KonamiCode;
     private SpriteRenderer spriteRender;
     public static bool enemy_destroyed = false;
     public bool enemy_allive = true;
@@ -35,7 +34,6 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         enemy_destroyed = false;
-        KonamiCode = GameManager.KonamiCode;
         x_axis = transform.position.x;
         difficulty = AddTimer.difficulty;
         gameover = GameManager.gameover;
