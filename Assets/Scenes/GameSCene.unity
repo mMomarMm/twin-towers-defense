@@ -123,63 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &12373353
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1780658939816507498, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_Name
-      value: avion
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982367625533400307, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 634ddfca49de4224fa36cadfd2f3852a, type: 3}
 --- !u!1 &160053753
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &310444674
 Transform:
   m_ObjectHideFlags: 0
@@ -266,7 +209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310444673}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.526996, y: 4.5181456, z: 0.8255592}
+  m_LocalPosition: {x: -0.89, y: -3.35, z: 0.8255592}
   m_LocalScale: {x: 0.56, y: 0.56, z: 0}
   m_Children:
   - {fileID: 1890553997}
@@ -350,7 +293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 457048314}
   - component: {fileID: 457048313}
-  - component: {fileID: 457048312}
   - component: {fileID: 457048315}
   - component: {fileID: 457048316}
   m_Layer: 0
@@ -360,25 +302,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &457048312
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457048311}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cd6505c98f465204f91069ed50078fe3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &457048313
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1282,7 +1205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2053552928
 Transform:
   m_ObjectHideFlags: 0

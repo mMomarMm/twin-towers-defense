@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -5186297844332663154}
   - component: {fileID: 4810987872009332803}
   - component: {fileID: 4776217728429226147}
-  - component: {fileID: -2058207508496620415}
   m_Layer: 0
   m_Name: avion
   m_TagString: Aviones
@@ -145,32 +144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cabb5e4c377021b4598089efff10b4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyTransf: {fileID: 0}
+  EnemyTransf: {fileID: 2982367625533400307}
   newdollars: 0
-  DollarEffect: {fileID: 8525999201655399217, guid: 22c60d3a090000d41816edbcfb1c7584, type: 3}
+  DollarEffect: {fileID: 8525999201655399247, guid: 22c60d3a090000d41816edbcfb1c7584, type: 3}
   dollars: 0
-  KonamiCode: 0
   enemy_allive: 1
   gameover: 0
   rb: {fileID: 4810987872009332803}
   speed: 2
   Torres: {fileID: 0}
   difficulty: 0.3
-  explosion: {fileID: -2058207508496620415}
-  Odifficulty: 0.3
---- !u!111 &-2058207508496620415
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780658939816507498}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1c2cc34344204214199f7196e5f934e8, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 1c2cc34344204214199f7196e5f934e8, type: 2}
-  m_WrapMode: 1
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  explosion: {fileID: 0}

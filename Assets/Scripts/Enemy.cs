@@ -17,11 +17,10 @@ public class Enemy : MonoBehaviour
     public Transform Torres;
     public float difficulty;
     private float x_axis;
-    public Animation explosion;
 
     void Start()
     {
-    Torres = GameObject.FindGameObjectWithTag("Torres").GetComponent<Transform>();
+        Torres = GameObject.FindGameObjectWithTag("Torres").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         dollars = Dollar.dollars;
         spriteRender = GetComponent<SpriteRenderer>();
@@ -34,7 +33,7 @@ public class Enemy : MonoBehaviour
         } while (enemy_allive);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         enemy_destroyed = false;
         newdollars = Dollar.newdollars;
