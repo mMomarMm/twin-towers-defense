@@ -14,13 +14,13 @@ public class Enemy : MonoBehaviour
     public bool gameover;
     public Rigidbody2D rb;
     public float speed = 2f;
-    public Transform Torres;
     public float difficulty;
     private float x_axis;
+    private Vector2 Torres;
 
     void Start()
     {
-        Torres = GameObject.FindGameObjectWithTag("Torres").GetComponent<Transform>();
+        Torres = new Vector2(0, -6.71999979019165f);
         rb = GetComponent<Rigidbody2D>();
         dollars = Dollar.dollars;
         spriteRender = GetComponent<SpriteRenderer>();
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         difficulty = AddTimer.difficulty;
         do
         {
-           transform.position = Vector2.MoveTowards(transform.position, Torres.position, speed * Time.deltaTime);
+           transform.position = Vector2.MoveTowards(transform.position, Torres, speed * Time.deltaTime);
         } while (enemy_allive);
     }
 
@@ -41,11 +41,12 @@ public class Enemy : MonoBehaviour
         //efects
         if (newdollars >= 1)
         {
-            Instantiate(DollarEffect, EnemyTransf);
+            Instantiate(DollarEffect, transform.position);
         }
 
         //movement
-        Vector3 difference = Torres.position - transform.position;
+        Vector3 torres3 = new Vector3(0, -6.71999979019165f, 0);
+        Vector3 difference = torres3 - transform.position;
         difference.Normalize();
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
