@@ -12,10 +12,10 @@ public class PauseMenu : MonoBehaviour
     }
     public void Restart()
     {
-        SceneManager.LoadScene("GameSCene");
+        SceneManager.LoadScene(2);
     }
     public void goMainMenu()
     {
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene(0);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform EnemyTransf;
+    public Transform DollarEffectway;
     public int newdollars;
     public GameObject DollarEffect;
     public int dollars;
@@ -25,8 +25,8 @@ public class Enemy : MonoBehaviour
         dollars = Dollar.dollars;
         spriteRender = GetComponent<SpriteRenderer>();
         x_axis = transform.position.x;
-        speed += difficulty;
         difficulty = AddTimer.difficulty;
+        speed += difficulty;
         do
         {
            transform.position = Vector2.MoveTowards(transform.position, Torres, speed * Time.deltaTime);
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
         //efects
         if (newdollars >= 1)
         {
-            Instantiate(DollarEffect, transform.position);
+            Instantiate(DollarEffect, DollarEffectway);
         }
 
         //movement
@@ -59,10 +59,6 @@ public class Enemy : MonoBehaviour
         if (x_axis < 0)
         {
             spriteRender.flipY = false;
-        }
-        if (gameover) 
-        {
-            Destroy(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
