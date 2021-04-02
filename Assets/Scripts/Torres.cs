@@ -10,11 +10,6 @@ public class Torres : MonoBehaviour
     public Transform smokeleftw;
     public static  Vector3 TorresPosition;
     public static bool gameover;
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameover = GameManager.gameover;
-    }
     private void Update()
     {
         TorresPosition = transform.position;
@@ -26,6 +21,7 @@ public class Torres : MonoBehaviour
             gameover = true;
             Instantiate(smokeleft, smokeleftw.position, transform.rotation);
             Instantiate(smokeright, smokerightw.position, transform.rotation);
+            Time.timeScale = 0;
         }
     }
 }

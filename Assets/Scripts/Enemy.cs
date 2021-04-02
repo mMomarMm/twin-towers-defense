@@ -37,7 +37,6 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         enemy_destroyed = false;
-        gameover = GameManager.gameover;
         newdollars = Dollar.newdollars;
         
         //efects
