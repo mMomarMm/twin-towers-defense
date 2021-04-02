@@ -6,15 +6,8 @@ using UnityEngine.UI;
 // Name your classes better. If this is only for difficulty, call it DifficultyTimer. If it's a generic timer, remove the difficulty field
 public class AddTimer : MonoBehaviour
 {
-	// No reason for this to be public
 	private float t;
-
 	public Text textAddtimer;
-
-	// This does not need to be here
-	// bool gameover;
-
-	// Why is this static?
 	public static float difficulty = 0.3f;
 
 	// Update is called once per frame
