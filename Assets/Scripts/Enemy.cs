@@ -25,17 +25,18 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         dollars = Dollar.dollars;
         spriteRender = GetComponent<SpriteRenderer>();
+        x_axis = transform.position.x;
+        speed += difficulty;
+        difficulty = AddTimer.difficulty;
         do
         {
-            transform.position = Vector2.MoveTowards(transform.position, Torres.position, speed * Time.deltaTime);
+           transform.position = Vector2.MoveTowards(transform.position, Torres.position, speed * Time.deltaTime);
         } while (enemy_allive);
     }
 
     void FixedUpdate()
     {
         enemy_destroyed = false;
-        x_axis = transform.position.x;
-        difficulty = AddTimer.difficulty;
         gameover = GameManager.gameover;
         newdollars = Dollar.newdollars;
         
@@ -44,13 +45,8 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(DollarEffect, EnemyTransf);
         }
-        Debug.Log(EnemyTransf);
+
         //movement
-        if (difficulty != 0.3f)
-        {
-            speed += 0.3f;
-            Debug.Log(speed + "speed");
-        }
         Vector3 difference = Torres.position - transform.position;
         difference.Normalize();
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
