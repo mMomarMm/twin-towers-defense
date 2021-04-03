@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("ookeook");
         if (Input.GetKey(KeyCode.Escape))
         {
+            Time.timeScale = 0;
             torres.SetActive(false);
             pauseMenu.SetActive(true);
         }
