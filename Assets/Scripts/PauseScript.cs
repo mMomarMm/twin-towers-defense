@@ -8,18 +8,16 @@ public class PauseScript : MonoBehaviour
     // Start is called before the first frame update
     public void pauseGame()
     {
+        Debug.Log("okdijrje");
         if (isPaused)
         {
-            Debug.Log("okdijrje");
             Time.timeScale = 1;
             isPaused = false;
         }
-        else
+        if (!isPaused)
         {
             Time.timeScale = 0;
             isPaused = true;
         }
-
-
     }
 }

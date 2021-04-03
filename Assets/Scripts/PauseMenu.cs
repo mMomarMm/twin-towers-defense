@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    bool setactive;
+    void Update()
+    {
+        Debug.Log("woorrjking");
+    }
     public void unPause()
     {
         Time.timeScale = 1;
