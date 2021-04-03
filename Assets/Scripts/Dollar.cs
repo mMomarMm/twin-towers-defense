@@ -2,9 +2,8 @@
 using UnityEngine.UI;
 public class Dollar : MonoBehaviour
 {
-    public static int dollars;
-    public static int newdollars;
-    public bool enemy_destroyed;
+    public int dollars;
+    public int newdollars;
     public Text dollarsText;
 
     void Start()
@@ -12,22 +11,10 @@ public class Dollar : MonoBehaviour
         dollars = 0;
         newdollars = 0;
     }
-    void Update()
+    public void gettingDollars()
     {
-        enemy_destroyed = Enemy.enemy_destroyed;
-        if (enemy_destroyed)
-        {
-            newdollars = Random.Range(3, -1);
-            if (newdollars >= 1)
-            {
-                newdollars -= 1;
-            }
-            dollars += newdollars;
-        } else
-        {
-            newdollars = 0;
-            enemy_destroyed = false;
-        }
+        newdollars = Enemy.newdollars;
+        dollars += newdollars;
         dollarsText.text = dollars.ToString();
     }
 }
