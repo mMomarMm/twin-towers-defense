@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    bool setactive;
-    void Update()
-    {
-        Debug.Log("woorrjking");
-    }
     public void unPause()
     {
         Time.timeScale = 1;
