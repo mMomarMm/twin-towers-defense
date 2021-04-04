@@ -9,7 +9,6 @@ public class AddTimer : MonoBehaviour
 	private float t;
 	public Text textAddtimer;
 	public static float difficulty = 0.3f;
-
 	// Update is called once per frame
 	void Update()
 	{

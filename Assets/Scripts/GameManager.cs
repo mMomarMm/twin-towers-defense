@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject torres;
     // Update is called once per frame
+    void Start()
+    {
+        Time.timeScale = 1;
+    }
     void Update()
     {
         if (Input.GetKey(KeyCode.Escape))

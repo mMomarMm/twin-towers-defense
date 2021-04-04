@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static bool toMainMenu;
+    void Start()
+    {
+        toMainMenu = false;
+    }
     public void unPause()
     {
         Time.timeScale = 1;
@@ -15,6 +20,10 @@ public class PauseMenu : MonoBehaviour
     }
     public void goMainMenu()
     {
-        SceneManager.LoadScene(0);
+        if (!toMainMenu)
+        {
+            toMainMenu = true;
+            SceneManager.LoadScene(1);
+        }
     }
 }
