@@ -6,44 +6,37 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     private float Xscale;
-    private bool toMainMenu;
+    public static int LoadScene;
+    
     // Start is called before the first frame update
     void Start()
     {
-        toMainMenu = PauseMenu.toMainMenu;
         Xscale = transform.localScale.x;
-        if (toMainMenu)
-        {
-            StartCoroutine(LoadAsyncOperation2());
-            toMainMenu = false;
-        }
-        else
-        {
-            StartCoroutine(LoadAsyncOperation());
-        }
+        StartCoroutine(LoadAsyncOperation());
     }
 
-    IEnumerator LoadAsyncOperation2()
-    {
-        if (!toMainMenu)
-        {
-            AsyncOperation gameLevel2 = SceneManager.LoadSceneAsync(0);
-            while (gameLevel2.progress < 1)
-            {
-                Xscale = gameLevel2.progress * 38;
-                yield return new WaitForEndOfFrame();
-            }
-            yield return null;
-        }
-    }
-
+    //gamelevel
     IEnumerator LoadAsyncOperation()
     {
-        AsyncOperation gameLevel = SceneManager.LoadSceneAsync(2);
-        while (gameLevel.progress < 1)
+        if (LoadScene >= 2)
         {
-            Xscale = gameLevel.progress * 38;
-            yield return new WaitForEndOfFrame();
+            AsyncOperation gameLevel1 = SceneManager.LoadSceneAsync(2);
+            while (gameLevel1.progress < 1)
+            {
+                Xscale = gameLevel1.progress * 38;
+                yield return new WaitForEndOfFrame();
+            }
+        } 
+        else
+        {
+            AsyncOperation gameLevel0 = SceneManager.LoadSceneAsync(0);
+            while (gameLevel0.progress < 1)
+            {
+                Xscale = gameLevel0.progress * 38;
+                yield return new WaitForEndOfFrame();
+            }
         }
-    }
+    }   
 }
+
+   
