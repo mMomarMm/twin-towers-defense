@@ -7,6 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     private float Xscale;
     public static int LoadScene;
+    public AsyncOperation gameLevel;
     
     // Start is called before the first frame update
     void Start()
@@ -20,22 +21,17 @@ public class SceneLoader : MonoBehaviour
     {
         if (LoadScene == 2)
         {
-            AsyncOperation gameLevel1 = SceneManager.LoadSceneAsync(2);
-            while (gameLevel1.progress < 1)
-            {
-                Xscale = gameLevel1.progress * 38;
-                yield return new WaitForEndOfFrame();
-            }
+            gameLevel = SceneManager.LoadSceneAsync(2);
         } 
         else
         {
-            AsyncOperation gameLevel0 = SceneManager.LoadSceneAsync(0);
-            while (gameLevel0.progress < 1)
-            {
-                Xscale = gameLevel0.progress * 38;
-                yield return new WaitForEndOfFrame();
-            }
+            gameLevel = SceneManager.LoadSceneAsync(0);
         }
+        while (gameLevel.progress < 1)
+        {
+            Xscale = gameLevel.progress * 38;
+            yield return new WaitForEndOfFrame();
+        } 
     }   
 }
 
