@@ -217,7 +217,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 457048314}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &205356295
 GameObject:
@@ -598,8 +598,8 @@ Transform:
   m_LocalPosition: {x: -1.9599954, y: -5.897855, z: 0.8255592}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0}
   m_Children:
-  - {fileID: 1093289236}
   - {fileID: 160053754}
+  - {fileID: 1093289236}
   m_Father: {fileID: 905555848}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1071,7 +1071,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 457048314}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157821970
 GameObject:
@@ -2309,9 +2309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa87d7ac71938db459297b05bf884d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dollars: 0
-  newdollars: 0
-  dollarsText: {fileID: 1976811271}
 --- !u!114 &1976811271
 MonoBehaviour:
   m_ObjectHideFlags: 0

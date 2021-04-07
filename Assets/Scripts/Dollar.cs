@@ -1,20 +1,24 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 public class Dollar : MonoBehaviour
 {
-    public int dollars;
-    public int newdollars;
-    public Text dollarsText;
+    public static int dollars;
+    public static int newdollars;
+    public static Text dollarsText;
 
     void Start()
     {
         dollars = 0;
         newdollars = 0;
     }
-    public void gettingDollars()
+ 
+    public static IEnumerator GettingDollars()
     {
         newdollars = Enemy.newdollars;
         dollars += newdollars;
         dollarsText.text = dollars.ToString();
+        yield break;
     }
 }

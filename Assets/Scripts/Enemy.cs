@@ -14,32 +14,31 @@ public class Enemy : MonoBehaviour
     public float difficulty;
     private float x_axis;
     private Vector2 Torres;
-    public Dollar Dollar;
+    public IEnumerator GettingDollars;
     void Start()
     {
-        Dollar.gettingDollars();
+        GettingDollars = Dollar.GettingDollars();
         Torres = new Vector2(0, -6.71999979019165f);
-        rb = GetComponent<Rigidbody2D>();
         spriteRender = GetComponent<SpriteRenderer>();
         x_axis = transform.position.x;
         difficulty = AddTimer.difficulty;
         speed += difficulty;
-        do
-        {
-           transform.position = Vector2.MoveTowards(transform.position, Torres, speed * Time.deltaTime);
-        } while (enemy_allive);
     }
 
     void Update()
     {
         //movement
+        while (enemy_allive)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, Torres, speed * Time.deltaTime);
+        }
+
+        //rotation
         Vector3 torres3 = new Vector3(0, -6.71999979019165f, 0);
         Vector3 difference = torres3 - transform.position;
         difference.Normalize();
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
-        
-        //rotation
         if (x_axis > 0)
         {
             spriteRender.flipY = true;
@@ -49,6 +48,7 @@ public class Enemy : MonoBehaviour
             spriteRender.flipY = false;
         }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Balas")
@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
         if (newdollars >= 1)
         {
             Instantiate(DollarEffect, DollarEffectway);
-            Invoke("gettingDollars", 0);
+            StartCoroutine(GettingDollars);
             yield return null;
         }
     }
