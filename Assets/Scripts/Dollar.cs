@@ -19,6 +19,6 @@ public class Dollar : MonoBehaviour
         newdollars = Enemy.newdollars;
         dollars += newdollars;
         dollarsText.text = dollars.ToString();
-        yield break;
+        yield return dollarsText;
     }
 }

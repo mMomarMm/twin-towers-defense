@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public IEnumerator GettingDollars;
     void Start()
     {
+        //declaration
         GettingDollars = Dollar.GettingDollars();
         Torres = new Vector2(0, -6.71999979019165f);
         spriteRender = GetComponent<SpriteRenderer>();
@@ -33,6 +34,11 @@ public class Enemy : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, Torres, speed * Time.deltaTime);
         }
 
+        //this needs to be fixed
+        if (!enemy_allive)
+        {
+            StopCoroutine(GetDollarEffect());
+        }
         //rotation
         Vector3 torres3 = new Vector3(0, -6.71999979019165f, 0);
         Vector3 difference = torres3 - transform.position;
@@ -49,28 +55,30 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //collision
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Balas")
         {
-            Invoke("getDollarEffect", 0);
+            StartCoroutine(GetDollarEffect());
             enemy_allive = false;
         }
     }
-    IEnumerator getDollarEffect()
+    //effects
+    IEnumerator GetDollarEffect()
     {
         newdollars = Random.Range(3, -1);
         if (newdollars >= 1)
         {
             newdollars -= 1;
-            yield return null;
         }
+
         //efects
         if (newdollars >= 1)
         {
             Instantiate(DollarEffect, DollarEffectway);
             StartCoroutine(GettingDollars);
-            yield return null;
         }
+        yield break;
     }
 }
