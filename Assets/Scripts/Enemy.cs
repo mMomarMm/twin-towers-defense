@@ -61,24 +61,26 @@ public class Enemy : MonoBehaviour
         if (other.tag == "Balas")
         {
             StartCoroutine(GetDollarEffect());
-            enemy_allive = false;
         }
     }
     //effects
     IEnumerator GetDollarEffect()
     {
-        newdollars = Random.Range(3, -1);
-        if (newdollars >= 1)
+        if (enemy_allive)
         {
-            newdollars -= 1;
-        }
+            newdollars = Random.Range(3, -1);
+            if (newdollars >= 1)
+            {
+                newdollars -= 1;
+            }
 
-        //efects
-        if (newdollars >= 1)
-        {
-            Instantiate(DollarEffect, DollarEffectway);
-            StartCoroutine(GettingDollars);
+            //efects
+            if (newdollars >= 1)
+            {
+                Instantiate(DollarEffect, DollarEffectway);
+                StartCoroutine(GettingDollars);
+            }
         }
-        yield break;
+        yield return enemy_allive = true;
     }
 }
