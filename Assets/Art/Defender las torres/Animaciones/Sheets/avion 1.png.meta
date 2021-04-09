@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8cd1ea678e578a04d905d94d04ad18b2
+guid: 4ddbb338d35438c4db877762c3b18047
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -257,27 +257,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _vion_0
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 516
-        width: 72
-        height: 19
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea7735a8e4588ba40800000000000000
-      internalID: 5384199926896097198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: _vion_1
       rect:
         serializedVersion: 2
@@ -324,9 +303,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 234
-        y: 469
-        width: 28
-        height: 33
+        y: 461
+        width: 29
+        height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,27 +420,6 @@ TextureImporter:
       bones: []
       spriteID: 2c988178c2d603470800000000000000
       internalID: 8372311745294272962
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _vion_9
-      rect:
-        serializedVersion: 2
-        x: 257
-        y: 462
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b98cc64069bac6230800000000000000
-      internalID: 3633467660188829851
       vertices: []
       indices: 
       edges: []
@@ -1038,9 +996,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 298
-        y: 147
-        width: 55
-        height: 54
+        y: 142
+        width: 56
+        height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1076,34 +1034,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _vion_39
-      rect:
-        serializedVersion: 2
-        x: 451
-        y: 171
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f80667d39feb3a050800000000000000
-      internalID: 5810697921925374095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: _vion_40
       rect:
         serializedVersion: 2
-        x: 462
+        x: 449
         y: 149
-        width: 43
-        height: 48
+        width: 56
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1143,9 +1080,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 619
-        y: 152
-        width: 38
-        height: 45
+        y: 147
+        width: 39
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1160,76 +1097,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _vion_43
-      rect:
-        serializedVersion: 2
-        x: 628
-        y: 149
-        width: 5
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3dd9a71ec2974680800000000000000
-      internalID: -8770880335422825153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _vion_44
-      rect:
-        serializedVersion: 2
-        x: 329
-        y: 142
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 843388e0daae7b390800000000000000
-      internalID: -7802509800402046136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _vion_45
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 107
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4518a8f56a3eaa4f0800000000000000
-      internalID: -816590078707334828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: _vion_46
       rect:
         serializedVersion: 2
-        x: 74
-        y: 70
-        width: 44
-        height: 52
+        x: 68
+        y: 69
+        width: 55
+        height: 53
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1247,9 +1121,9 @@ TextureImporter:
       name: _vion_47
       rect:
         serializedVersion: 2
-        x: 156
+        x: 152
         y: 70
-        width: 33
+        width: 41
         height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1268,10 +1142,10 @@ TextureImporter:
       name: _vion_48
       rect:
         serializedVersion: 2
-        x: 236
-        y: 86
-        width: 30
-        height: 32
+        x: 235
+        y: 76
+        width: 31
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1302,132 +1176,6 @@ TextureImporter:
       bones: []
       spriteID: 7cbef8ab0f79302a0800000000000000
       internalID: -6772402354457154617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _vion_50
-      rect:
-        serializedVersion: 2
-        x: 153
-        y: 101
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99bd91fece3e38a90800000000000000
-      internalID: -7312750763156317287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _vion_51
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 89
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 925765f86e5db1020800000000000000
-      internalID: 2313678019808884009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _vion_52
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 87
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4970f1610bd63f700800000000000000
-      internalID: 572922180658988948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _vion_53
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 79
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5aee497e96f804420800000000000000
-      internalID: 2612245468894523045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _vion_54
-      rect:
-        serializedVersion: 2
-        x: 153
-        y: 79
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4490de4179fd4310800000000000000
-      internalID: 1391042124976264270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _vion_55
-      rect:
-        serializedVersion: 2
-        x: 248
-        y: 76
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: faa951efac3e7be60800000000000000
-      internalID: 7978095725895850671
       vertices: []
       indices: 
       edges: []

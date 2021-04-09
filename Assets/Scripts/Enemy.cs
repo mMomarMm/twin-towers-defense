@@ -4,41 +4,37 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    int isDeadHash;
+    Animator animator;
     public Transform DollarEffectway;
-    public static int newdollars;
     public GameObject DollarEffect;
     private SpriteRenderer spriteRender;
-    public bool enemy_allive = true;
+    public static bool enemy_allive = true;
     public Rigidbody2D rb;
     public float speed = 2f;
-    public float difficulty;
     private float x_axis;
     private Vector2 Torres;
-    public IEnumerator GettingDollars;
     void Start()
     {
         //declaration
-        GettingDollars = Dollar.GettingDollars();
+        enemy_allive = true;
         Torres = new Vector2(0, -6.71999979019165f);
         spriteRender = GetComponent<SpriteRenderer>();
         x_axis = transform.position.x;
-        difficulty = AddTimer.difficulty;
-        speed += difficulty;
+        speed += AddTimer.difficulty;
+        animator = GetComponent<Animator>();
+        isDeadHash = Animator.StringToHash("isDead");
+        bool isDead = animator.GetBool(isDeadHash);
     }
 
     void Update()
     {
         //movement
-        while (enemy_allive)
+        if (enemy_allive)
         {
             transform.position = Vector2.MoveTowards(transform.position, Torres, speed * Time.deltaTime);
         }
 
-        //this needs to be fixed
-        if (!enemy_allive)
-        {
-            StopCoroutine(GetDollarEffect());
-        }
         //rotation
         Vector3 torres3 = new Vector3(0, -6.71999979019165f, 0);
         Vector3 difference = torres3 - transform.position;
@@ -60,6 +56,8 @@ public class Enemy : MonoBehaviour
     {
         if (other.tag == "Balas")
         {
+            Debug.Log("hit");
+            animator.SetBool(isDeadHash, true);
             StartCoroutine(GetDollarEffect());
         }
     }
@@ -68,19 +66,13 @@ public class Enemy : MonoBehaviour
     {
         if (enemy_allive)
         {
-            newdollars = Random.Range(3, -1);
-            if (newdollars >= 1)
-            {
-                newdollars -= 1;
-            }
-
-            //efects
-            if (newdollars >= 1)
+            Dollar.newdollars = Random.Range(2, -2);
+            if (Dollar.newdollars >= 1)
             {
                 Instantiate(DollarEffect, DollarEffectway);
-                StartCoroutine(GettingDollars);
             }
+            yield return new WaitForSeconds(0.4f);
+            Destroy(gameObject);
         }
-        yield return enemy_allive = true;
     }
 }
