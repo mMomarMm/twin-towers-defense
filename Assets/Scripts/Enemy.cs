@@ -29,6 +29,10 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (transform.parent != null)
+        {
+            transform.parent = null;
+        }
         //movement
         if (enemy_allive)
         {
