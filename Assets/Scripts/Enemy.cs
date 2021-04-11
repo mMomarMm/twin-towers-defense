@@ -60,7 +60,6 @@ public class Enemy : MonoBehaviour
     {
         if (other.tag == "Balas")
         {
-            Debug.Log("hit");
             animator.SetBool(isDeadHash, true);
             StartCoroutine(GetDollarEffect());
         }

@@ -23,10 +23,6 @@ public class UpperSpawner : MonoBehaviour
             float r = Random.Range(3, 5);
             yield return new WaitForSeconds(AddTimer.SpawnTime * r);
             Instantiate(Enemy1, spawners);
-            if (AddTimer.SpawnTime == 0.4)
-            {
-                AddTimer.SpawnTime -= 0.03f;
-            }
         }
     }
 }

@@ -15,7 +15,7 @@ public class SideSpawners : MonoBehaviour
 
     IEnumerator Enemy1Spawn()
     {
-        while (AddTimer.SpawnRate != 0)
+        while (AddTimer.SpawnTime != 0)
         {
             float Xaxis = transform.position.x;
             Yaxis = Random.Range(10.23f, -7.65f);
