@@ -15,13 +15,18 @@ public class UpperSpawner : MonoBehaviour
 
     IEnumerator Enemy1Spawn()
     {
-        while (AddTimer.SpawnRate != 0)
+        while (AddTimer.SpawnTime != 0)
         {
             float Yaxis = transform.position.y;
             Xaxis = Random.Range(-18.61f, 19.12f);
             spawners.position = new Vector3(Xaxis, Yaxis, 0);
-            yield return new WaitForSeconds(AddTimer.SpawnRate * 3);
+            float r = Random.Range(3, 5);
+            yield return new WaitForSeconds(AddTimer.SpawnTime * r);
             Instantiate(Enemy1, spawners);
+            if (AddTimer.SpawnTime == 0.4)
+            {
+                AddTimer.SpawnTime -= 0.03f;
+            }
         }
     }
 }

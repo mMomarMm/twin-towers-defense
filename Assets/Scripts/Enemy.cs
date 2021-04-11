@@ -25,14 +25,14 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         isDeadHash = Animator.StringToHash("isDead");
         bool isDead = animator.GetBool(isDeadHash);
-    }
-
-    void Update()
-    {
         if (transform.parent != null)
         {
             transform.parent = null;
         }
+    }
+
+    void Update()
+    {
         //movement
         if (enemy_allive)
         {

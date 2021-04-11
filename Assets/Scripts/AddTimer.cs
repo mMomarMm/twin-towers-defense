@@ -9,7 +9,7 @@ public class AddTimer : MonoBehaviour
 	private float t;
 	public Text textAddtimer;
 	public static float difficulty = 0.3f;
-	public static float SpawnRate = 1;
+	public static float SpawnTime = 1.5;
 	// Update is called once per frame
 	void Update()
 	{
@@ -21,17 +21,17 @@ public class AddTimer : MonoBehaviour
 		float minutesPassed = t / 60;
 		if (minutesPassed > 4)
 		{
-			SpawnRate = 6f;
+			SpawnTime = 0.4f;
 			difficulty = 1.2f;
 		}
 		else if (minutesPassed > 3)
 		{
-			SpawnRate = 4f;
+			SpawnTime = 0.6f;
 			difficulty = 0.9f;
 		}
 		else if (minutesPassed > 2)
 		{
-			SpawnRate = 2f;
+			SpawnTime = 1f;
 			difficulty = 0.6f;
 		}
 	}
