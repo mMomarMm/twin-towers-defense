@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     public float startTimeBtwShots;
     private SpriteRenderer spriteRender;
     bool usando_blaster;
+    public CameraShake CameraShake;
 
     private void Start()
     {
@@ -42,6 +43,7 @@ public class Weapon : MonoBehaviour
                 if (Input.GetMouseButton(0))
                 {
                     Instantiate(projectile, shotPoint.position, transform.rotation);
+                    StartCoroutine(CameraShake.Shake(.15f, .4f));
                     timeBtwShots = startTimeBtwShots;
                 }
             }

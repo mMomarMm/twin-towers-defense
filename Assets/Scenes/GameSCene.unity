@@ -298,6 +298,7 @@ MonoBehaviour:
   projectile: {fileID: 5141231071777852528, guid: a726ea603e43b84459e9a11b5c875b6a, type: 3}
   shotPoint: {fileID: 1890553997}
   startTimeBtwShots: 1
+  CameraShake: {fileID: 3169982719380308971}
 --- !u!212 &310444676
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1544,6 +1545,7 @@ MonoBehaviour:
   shotPoint: {fileID: 205356296}
   startTimeBtwShots: 0.6
   torreta_comprada: 1
+  CameraShake: {fileID: 3169982719380308971}
 --- !u!1 &1583703128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,6 +2858,7 @@ GameObject:
   - component: {fileID: 3169982719380308757}
   - component: {fileID: 3169982719380308970}
   - component: {fileID: 3169982719380308968}
+  - component: {fileID: 3169982719380308971}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2906,3 +2909,15 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &3169982719380308971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169982719380308969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728abb4e287fbba48960c02d6f5f3479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

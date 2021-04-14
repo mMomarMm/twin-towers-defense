@@ -14,6 +14,7 @@ public class turret_gun : MonoBehaviour
     public float startTimeBtwShots;
     private SpriteRenderer spriteRender;
     public bool torreta_comprada = Shop.torreta_comprada;
+    public CameraShake CameraShake;
 
     private void Start()
     {
@@ -45,6 +46,7 @@ public class turret_gun : MonoBehaviour
                 if (Input.GetMouseButton(0))
                 {
                     Instantiate(projectile, shotPoint.position, transform.rotation);
+                    StartCoroutine(CameraShake.Shake(.15f, .45f));
                     timeBtwShots = startTimeBtwShots;
                 }
             }
