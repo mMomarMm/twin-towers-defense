@@ -10,6 +10,11 @@ public class MainMenu : MonoBehaviour
         SceneLoader.LoadScene = 2;
         SceneManager.LoadScene(1);
     }
+    public void PlayGameWeird()
+    {
+        SceneLoader.LoadScene = 3;
+        SceneManager.LoadScene(1);
+    }
     public void QuitGame()
     {
         Application.Quit();

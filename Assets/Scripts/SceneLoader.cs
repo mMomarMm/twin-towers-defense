@@ -19,10 +19,14 @@ public class SceneLoader : MonoBehaviour
     //gamelevel
     IEnumerator LoadAsyncOperation()
     {
-        if (LoadScene != 0)
+        if (LoadScene == 2)
         {
             gameLevel = SceneManager.LoadSceneAsync(2);
-        } 
+        }
+        else if (LoadScene == 3)
+        {
+            gameLevel = SceneManager.LoadSceneAsync(3);
+        }
         else
         {
             gameLevel = SceneManager.LoadSceneAsync(0);
