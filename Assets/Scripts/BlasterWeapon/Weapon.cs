@@ -8,8 +8,8 @@ public class Weapon : MonoBehaviour
     public float offset;
     public GameObject projectile;
     public Transform shotPoint;
-    private float timeBtwShots;
-    public float startTimeBtwShots;
+    private float timeBtwShots;  //time between shots
+    public static float startTimeBtwShots;
     private SpriteRenderer spriteRender;
     public CameraShake CameraShake;
 

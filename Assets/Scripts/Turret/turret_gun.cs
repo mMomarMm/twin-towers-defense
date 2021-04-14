@@ -10,7 +10,7 @@ public class turret_gun : MonoBehaviour
     public static bool turret_flip;
 
     private float timeBtwShots;
-    public float startTimeBtwShots;
+    public static float startTimeBtwShots;
     private SpriteRenderer spriteRender;
     public CameraShake CameraShake;
 
