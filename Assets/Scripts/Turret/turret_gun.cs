@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class turret_gun : MonoBehaviour
 {
-
     public float offset;
     public GameObject projectile;
     public Transform shotPoint;
@@ -13,7 +12,6 @@ public class turret_gun : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
     private SpriteRenderer spriteRender;
-    public bool torreta_comprada = Shop.torreta_comprada;
     public CameraShake CameraShake;
 
     private void Start()
@@ -22,39 +20,35 @@ public class turret_gun : MonoBehaviour
     }
     private void Update()
     {
-        if (torreta_comprada)
+        // Handles the weapon rotation
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+
+
+        if (rotZ < 89 && rotZ > -89)
         {
-            // Handles the weapon rotation
-            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+            spriteRender.flipY = false;
+            turret_flip = false;
+        }
+        else
+        {
+            spriteRender.flipY = true;
+            turret_flip = true;
+        }
 
-
-            if (rotZ < 89 && rotZ > -89)
+        if (timeBtwShots <= 0)
+        {
+            if (Input.GetMouseButton(0))
             {
-                spriteRender.flipY = false;
-                turret_flip = false;
+                Instantiate(projectile, shotPoint.position, transform.rotation);
+                StartCoroutine(CameraShake.Shake(.15f, .45f));
+                timeBtwShots = startTimeBtwShots;
             }
-            else
-            {
-                spriteRender.flipY = true;
-                turret_flip = true;
-            }
-
-            if (timeBtwShots <= 0)
-            {
-                if (Input.GetMouseButton(0))
-                {
-                    Instantiate(projectile, shotPoint.position, transform.rotation);
-                    StartCoroutine(CameraShake.Shake(.15f, .45f));
-                    timeBtwShots = startTimeBtwShots;
-                }
-            }
-            else
-            {
-                timeBtwShots -= Time.deltaTime;
-            }
-
+        }
+        else
+        {
+            timeBtwShots -= Time.deltaTime;
         }
     }
 }

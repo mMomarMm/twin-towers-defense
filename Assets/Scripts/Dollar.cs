@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 public class Dollar : MonoBehaviour
 {
-    public int dollars;
+    public static int dollars;
     public static int newdollars;
     public Text dollarsText;
 
