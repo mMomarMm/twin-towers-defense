@@ -1274,6 +1274,7 @@ MonoBehaviour:
   smokeright: {fileID: 1097695515287848097, guid: f570e2e92342308458f4a9b36671e755, type: 3}
   smokerightw: {fileID: 1093289236}
   smokeleftw: {fileID: 160053754}
+  AddTimer: {fileID: 1450559500}
 --- !u!1 &464425865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,7 +1374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469479245}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3169982719380308757}
@@ -1913,7 +1914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905555847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9599954, y: -0.822145, z: 1}
+  m_LocalPosition: {x: 1.9599954, y: -0.822145, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 457048314}

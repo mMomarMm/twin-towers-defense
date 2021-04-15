@@ -39,15 +39,12 @@ public class AddTimer : MonoBehaviour
 
 	IEnumerator SpawnTimeLess()
     {
-		while (SpawnTime >= 0.4)
+		while (SpawnTime >= 0.4 && SpawnTime <= 0)
 		{
 			int r = Random.Range(1, 6);
 			yield return new WaitForSeconds(r);
 			SpawnTime -= 0.02f;
-            if (SpawnTime <= 0)
-            {
-				StopCoroutine(SpawnTimeLess());
-            }
 		}
+		StopCoroutine(SpawnTimeLess());
 	}
 }

@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     {
         //declaration
         enemy_allive = true;
-        Torres = new Vector3(0, -6.71999979019165f, 1);
+        Torres = new Vector2(0, -6.71999979019165f);
         spriteRender = GetComponent<SpriteRenderer>();
         x_axis = transform.position.x;
         speed += AddTimer.difficulty;
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         }
 
         //rotation
-        Vector3 torres3 = new Vector3(0, -6.71999979019165f, 1);
+        Vector3 torres3 = new Vector3(0, -6.71999979019165f, 0);
         Vector3 difference = torres3 - transform.position;
         difference.Normalize();
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;

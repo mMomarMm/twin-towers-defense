@@ -14,12 +14,12 @@ public class CameraShake : MonoBehaviour
             float x = Random.Range(0.5f, 0.7f) * magnitude;
             float y = Random.Range(0.5f, 0.7f) * magnitude;
 
-            transform.position = new Vector3(x, y, 0);
+            transform.position = new Vector3(x, y, -1);
 
             elapsed += Time.deltaTime;
             
             yield return null;
         }
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(0, 0, -1);
     }
 }
