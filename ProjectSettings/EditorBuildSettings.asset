@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameSCene.unity
     guid: dd6a5ff2c90d34442835e51eb2a8ee16
   - enabled: 1
+    path: Assets/Scenes/WeirdGameSCene.unity
+    guid: c49200aafd0ba4f44b08a4c10c355c19
+  - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: a0121d2156bb5154897684494ed54a07
   m_configObjects: {}
