@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
         {
             transform.parent = null;
         }
+        float z = transform.position.z; 
+        z += 1f;
     }
 
     void Update()
