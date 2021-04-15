@@ -23,7 +23,7 @@ public class AddTimer : MonoBehaviour
 		{
 			SpawnTime = 0.4f;
 			difficulty = 1.2f;
-			
+			StartCoroutine(SpawnTimeLess());
 		}
 		else if (minutesPassed > 3)
 		{
@@ -39,11 +39,15 @@ public class AddTimer : MonoBehaviour
 
 	IEnumerator SpawnTimeLess()
     {
-		if (SpawnTime == 0.4)
+		while (SpawnTime >= 0.4)
 		{
 			int r = Random.Range(1, 6);
 			yield return new WaitForSeconds(r);
 			SpawnTime -= 0.02f;
+            if (SpawnTime <= 0)
+            {
+				StopCoroutine(SpawnTimeLess());
+            }
 		}
 	}
 }

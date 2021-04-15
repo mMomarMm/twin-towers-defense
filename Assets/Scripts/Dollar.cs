@@ -12,15 +12,12 @@ public class Dollar : MonoBehaviour
     {
         dollars = 0;
         newdollars = 0;
-        Debug.Log(dollars + " = dollars, newdollars = " + newdollars);
     }
 
     private void Update()
     {
         if (newdollars >= 1)
-        {
-            Debug.Log(newdollars + " >= 1");
-            dollars += newdollars;
+        {   dollars += newdollars;
             newdollars = 0;
             dollarsText.text = dollars.ToString();
         }

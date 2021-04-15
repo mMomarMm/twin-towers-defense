@@ -12,10 +12,9 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         transform.Rotate(0, 0, -90);
-        lifeTime = 3;
+        lifeTime = 2;
     }
 
-    
     private void Update()
     {
         if (usando_blaster) 

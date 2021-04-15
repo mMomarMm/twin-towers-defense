@@ -15,6 +15,7 @@ public class PauseScript : MonoBehaviour
         }
         if (!isPaused)
         {
+            CameraShake.elapsed = 1f;
             Time.timeScale = 0;
             isPaused = true;
         }

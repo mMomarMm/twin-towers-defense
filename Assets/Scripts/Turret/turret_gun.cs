@@ -16,6 +16,7 @@ public class turret_gun : MonoBehaviour
 
     private void Start()
     {
+        startTimeBtwShots = 0.5f;
         spriteRender = GetComponent<SpriteRenderer>();
     }
     private void Update()

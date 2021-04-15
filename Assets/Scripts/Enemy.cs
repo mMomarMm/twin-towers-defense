@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public Transform DollarEffectway;
     public GameObject DollarEffect;
     private SpriteRenderer spriteRender;
-    public static bool enemy_allive = true;
+    public static bool enemy_allive;
     public Rigidbody2D rb;
     public float speed = 2f;
     private float x_axis;
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     {
         //declaration
         enemy_allive = true;
-        Torres = new Vector2(0, -6.71999979019165f);
+        Torres = new Vector3(0, -6.71999979019165f, 1);
         spriteRender = GetComponent<SpriteRenderer>();
         x_axis = transform.position.x;
         speed += AddTimer.difficulty;
@@ -29,8 +29,6 @@ public class Enemy : MonoBehaviour
         {
             transform.parent = null;
         }
-        float z = transform.position.z; 
-        z += 1f;
     }
 
     void Update()
@@ -42,7 +40,7 @@ public class Enemy : MonoBehaviour
         }
 
         //rotation
-        Vector3 torres3 = new Vector3(0, -6.71999979019165f, 0);
+        Vector3 torres3 = new Vector3(0, -6.71999979019165f, 1);
         Vector3 difference = torres3 - transform.position;
         difference.Normalize();
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;

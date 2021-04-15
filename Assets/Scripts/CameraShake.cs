@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+    public static float elapsed;
     public IEnumerator Shake (float duration, float magnitude)
     {
-        float elapsed = 0f;
+        elapsed = 0f;
 
         while (elapsed < duration)
         {
