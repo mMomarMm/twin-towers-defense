@@ -40,7 +40,7 @@ public class Weapon : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Instantiate(projectile, shotPoint.position, transform.rotation);
-                StartCoroutine(CameraShake.Shake(.15f, 1.7f));
+                StartCoroutine(CameraShake.Shake(.15f, .3f));
                 timeBtwShots = startTimeBtwShots;
             }
         }

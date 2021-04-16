@@ -12,11 +12,15 @@ public class Wturret_gun : MonoBehaviour
     public CameraShake CameraShake;
     private float timeBtwShots;
     public static float startTimeBtwShots;
+    public bool existSprRen;
 
     private void Start()
     {
         startTimeBtwShots = 0;
-        spriteRender = GetComponent<SpriteRenderer>();
+        if (existSprRen)
+        {
+            spriteRender = GetComponent<SpriteRenderer>();
+        }
     }
     private void Update()
     {
@@ -28,12 +32,18 @@ public class Wturret_gun : MonoBehaviour
 
         if (rotZ < 89 && rotZ > -89)
         {
+            if (existSprRen)
+            {
             spriteRender.flipY = false;
+            }
             turret_flip = false;
         }
         else
         {
+            if (existSprRen)
+            {
             spriteRender.flipY = true;
+            }
             turret_flip = true;
         }
 
