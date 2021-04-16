@@ -10,8 +10,8 @@ public class Shop : MonoBehaviour
     public bool wasBoughtT, wasBoughtS = false;
     //wasBoughtT = was bought turret, wasBoughtS = was bought shotting time;
     public GameObject Blaster, Turret;
-    public Image TbuyButton, CbuyButton, BbuyButton;
-    //TbuyButton = turret buy button, CbuyButton = clock buy button, BbuyButton = bomb buy button
+    public Image TbuyButton, SbuyButton, BbuyButton;
+    //TbuyButton = turret buy button, CbuyButton = Shooting time (clock) buy button, BbuyButton = bomb buy button
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class Shop : MonoBehaviour
         {
             wasBoughtT = true;
             Dollar.dollars -= 150;
-            TbuyButton.GetComponent<Image>().color = new Color32(74, 184, 42, 255);
+            TbuyButton.color = new Color32(74, 184, 42, 255);
             Blaster.SetActive(false);
             Turret.SetActive(true);
         }
@@ -37,6 +37,7 @@ public class Shop : MonoBehaviour
     {
         if (Dollar.dollars >= 50 && !wasBoughtS)
         {
+            SbuyButton.color = new Color32(74, 184, 42, 255);
             Weapon.startTimeBtwShots = 0.3f;
             turret_gun.startTimeBtwShots = 0.7f;                                                                         
             wasBoughtS = true;

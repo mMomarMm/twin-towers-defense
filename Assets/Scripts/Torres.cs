@@ -13,6 +13,7 @@ public class Torres : MonoBehaviour
     public static  Vector3 TorresPosition;
     public static bool gameover;
     public GameObject AddTimer;
+    public GameObject addtimerswitch;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -28,10 +29,9 @@ public class Torres : MonoBehaviour
             gameover = true;
             Instantiate(smokeleft, smokeleftw.position, transform.rotation);
             Instantiate(smokeright, smokerightw.position, transform.rotation);
-            Enemy.enemy_allive = false;
+            StartCoroutine(Enemy.TowersLose());
+            addtimerswitch.transform.position = AddTimer.transform.position;
             AddTimer.SetActive(false);
-            new WaitForSeconds(2);
-            Time.timeScale = 0;
         }
     }
 }

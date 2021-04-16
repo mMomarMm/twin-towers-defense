@@ -45,6 +45,17 @@ public class AddTimer : MonoBehaviour
 			yield return new WaitForSeconds(r);
 			SpawnTime -= 0.02f;
 		}
-		StopCoroutine(SpawnTimeLess());
+        if (SpawnTime <= 0)
+        {
+			StopCoroutine(SpawnTimeLess());				
+        }
 	}
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == "switch")
+        {
+			SpawnTime = 0;
+			difficulty = 0;
+        }
+    }
 }

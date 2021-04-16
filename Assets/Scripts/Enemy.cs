@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour
             StartCoroutine(GetDollarEffect());
         }
     }
+
     //effects
     IEnumerator GetDollarEffect()
     {
@@ -74,8 +75,14 @@ public class Enemy : MonoBehaviour
             {
                 Instantiate(DollarEffect, DollarEffectway);
             }
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.6f);
             Destroy(gameObject);
         }
+    }
+    
+    public static IEnumerator TowersLose()
+    {
+        enemy_allive = false;
+        yield break;
     }
 }
