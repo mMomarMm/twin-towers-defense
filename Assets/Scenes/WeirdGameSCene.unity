@@ -342,6 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 205356296}
+  - component: {fileID: 205356297}
   m_Layer: 0
   m_Name: Shot_point
   m_TagString: Untagged
@@ -363,6 +364,22 @@ Transform:
   m_Father: {fileID: 1545109633}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &205356297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205356295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 228cfa99ccb81c040b23b09c23eb189e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  projectile: {fileID: 5141231071777852528, guid: a726ea603e43b84459e9a11b5c875b6a, type: 3}
+  shotPoint: {fileID: 205356296}
+  CameraShake: {fileID: 3169982719380308971}
 --- !u!1 &271587519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,7 +2221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0
-  projectile: {fileID: 8530208071930589250, guid: 9638cc126fdf45e40974aae7748da327, type: 3}
+  projectile: {fileID: 5141231071777852528, guid: a726ea603e43b84459e9a11b5c875b6a, type: 3}
   shotPoint: {fileID: 205356296}
   CameraShake: {fileID: 3169982719380308971}
 --- !u!1 &1583703128
