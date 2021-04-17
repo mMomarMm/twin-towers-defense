@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         //movement
-        if (enemy_allive)
+        if (transform.position != new Vector3(0, -6.71999979019165f, 0))
         {
             transform.position = Vector2.MoveTowards(transform.position, Torres, speed * Time.deltaTime);
         }
@@ -63,21 +63,28 @@ public class Enemy : MonoBehaviour
             animator.SetBool(isDeadHash, true);
             StartCoroutine(GetDollarEffect());
         }
+        else if (other.CompareTag("Torres"))
+        {
+            animator.SetBool(isDeadHash, true);
+        }
+    }
+
+    IEnumerator ThisShouldChange()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
     //effects
     IEnumerator GetDollarEffect()
     {
-        if (enemy_allive)
+        Dollar.newdollars = Random.Range(2, -2);
+        if (Dollar.newdollars >= 1)
         {
-            Dollar.newdollars = Random.Range(2, -2);
-            if (Dollar.newdollars >= 1)
-            {
-                Instantiate(DollarEffect, DollarEffectway);
-            }
-            yield return new WaitForSeconds(0.6f);
-            Destroy(gameObject);
+            Instantiate(DollarEffect, DollarEffectway);
         }
+        yield return new WaitForSeconds(0.8f);
+        Destroy(gameObject);
     }
     
     public static IEnumerator TowersLose()

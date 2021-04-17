@@ -19,37 +19,40 @@ public class turret_gun : MonoBehaviour
         startTimeBtwShots = 0.5f;
         spriteRender = GetComponent<SpriteRenderer>();
     }
-    private void Update()
+    void Update()
     {
-        // Handles the weapon rotation
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+        if (!Torres.gameover)
+        {
+            // Handles the weapon rotation
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
 
 
-        if (rotZ < 89 && rotZ > -89)
-        {
-            spriteRender.flipY = false;
-            turret_flip = false;
-        }
-        else
-        {
-            spriteRender.flipY = true;
-            turret_flip = true;
-        }
-
-        if (timeBtwShots <= 0)
-        {
-            if (Input.GetMouseButton(0))
+            if (rotZ < 89 && rotZ > -89)
             {
-                Instantiate(projectile, shotPoint.position, transform.rotation);
-                StartCoroutine(CameraShake.Shake(.15f, .45f));
-                timeBtwShots = startTimeBtwShots;
+                spriteRender.flipY = false;
+                turret_flip = false;
             }
-        }
-        else
-        {
-            timeBtwShots -= Time.deltaTime;
+            else
+            {
+                spriteRender.flipY = true;
+                turret_flip = true;
+            }
+
+            if (timeBtwShots <= 0)
+            {
+                if (Input.GetMouseButton(0))
+                {
+                    Instantiate(projectile, shotPoint.position, transform.rotation);
+                    StartCoroutine(CameraShake.Shake(.15f, .45f));
+                    timeBtwShots = startTimeBtwShots;
+                }
+            }
+            else
+            {
+                timeBtwShots -= Time.deltaTime;
+            }
         }
     }
 }

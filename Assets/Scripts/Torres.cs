@@ -13,7 +13,8 @@ public class Torres : MonoBehaviour
     public static  Vector3 TorresPosition;
     public static bool gameover;
     public GameObject AddTimer;
-    public GameObject addtimerswitch;
+    public GameObject GameOScreen;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -25,13 +26,17 @@ public class Torres : MonoBehaviour
     {
         if (other.tag == "Aviones")
         {
-            animator.SetBool(isTouchHash, true);
-            gameover = true;
-            Instantiate(smokeleft, smokeleftw.position, transform.rotation);
-            Instantiate(smokeright, smokerightw.position, transform.rotation);
-            StartCoroutine(Enemy.TowersLose());
-            addtimerswitch.transform.position = AddTimer.transform.position;
-            AddTimer.SetActive(false);
+            StartCoroutine(Lose());
         }
+    }
+    IEnumerator Lose()
+    {
+        animator.SetBool(isTouchHash, true);
+        gameover = true;
+        Instantiate(smokeleft, smokeleftw.position, transform.rotation);
+        Instantiate(smokeright, smokerightw.position, transform.rotation);
+        GameOScreen.SetActive(true);
+        Time.timeScale = 0;
+        yield return new WaitForEndOfFrame();
     }
 }
