@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     public Transform DollarEffectway;
     public GameObject DollarEffect;
     private SpriteRenderer spriteRender;
-    public static bool enemy_allive;
     public Rigidbody2D rb;
     public float speed = 2f;
     private float x_axis;
@@ -17,7 +16,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         //declaration
-        enemy_allive = true;
         Torres = new Vector2(0, -6.71999979019165f);
         spriteRender = GetComponent<SpriteRenderer>();
         x_axis = transform.position.x;
@@ -83,13 +81,7 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(DollarEffect, DollarEffectway);
         }
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0);
         Destroy(gameObject);
-    }
-    
-    public static IEnumerator TowersLose()
-    {
-        enemy_allive = false;
-        yield break;
     }
 }

@@ -50,12 +50,4 @@ public class AddTimer : MonoBehaviour
 			StopCoroutine(SpawnTimeLess());				
         }
 	}
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.name == "switch")
-        {
-			SpawnTime = 0;
-			difficulty = 0;
-        }
-    }
 }
