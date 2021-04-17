@@ -19,7 +19,6 @@ public class Shop : MonoBehaviour
     }
     public void BuyTurret()
     {
-        Debug.Log("click");
         if (!wasBoughtT && Dollar.dollars >= 150)
         {
             wasBoughtT = true;
@@ -36,7 +35,6 @@ public class Shop : MonoBehaviour
     }   
     public void ShottingTime()
     {
-        Debug.Log("click");
         if (Dollar.dollars >= 50 && !wasBoughtS)
         {
             SbuyButton.color = new Color32(74, 184, 42, 255);
@@ -47,7 +45,5 @@ public class Shop : MonoBehaviour
     }
     public void Bomb()
     {
-
-        Debug.Log("click");
     }
 }
