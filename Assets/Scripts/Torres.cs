@@ -17,6 +17,7 @@ public class Torres : MonoBehaviour
 
     private void Start()
     {
+        gameover = false;
         animator = GetComponent<Animator>();
         isTouchHash = Animator.StringToHash("isTouch");
         bool isTouch = animator.GetBool(isTouchHash);
