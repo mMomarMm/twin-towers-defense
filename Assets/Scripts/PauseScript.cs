@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
-    bool isPaused;
+    bool isPaused = false;
     // Start is called before the first frame update
     public void pauseGame()
     {

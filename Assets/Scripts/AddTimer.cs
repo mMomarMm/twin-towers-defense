@@ -13,8 +13,6 @@ public class AddTimer : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Time.timeScale = 1;
-		t = 0;
 		t += Time.deltaTime;
 		string minutes = ((int)t / 60).ToString();
 		string seconds = (t % 60).ToString("F1");
