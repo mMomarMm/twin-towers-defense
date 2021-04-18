@@ -17,7 +17,6 @@ public class AddTimer : MonoBehaviour
 		string minutes = ((int)t / 60).ToString();
 		string seconds = (t % 60).ToString("F1");
 		textAddtimer.text = minutes + ":" + seconds;
-		Debug.Log(t);
 		float minutesPassed = t / 60;
 		if (minutesPassed > 4)
 		{
