@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour
         else if (other.CompareTag("Torres"))
         {
             animator.SetBool(isDeadHash, true);
+            StartCoroutine(ThisShouldChange());
         }
     }
 
@@ -81,7 +82,8 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(DollarEffect, DollarEffectway);
         }
-        yield return new WaitForSeconds(0);
+        StartCoroutine(ThisShouldChange());
         Destroy(gameObject);
+        yield return null;
     }
 }

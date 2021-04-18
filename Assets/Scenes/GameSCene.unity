@@ -3506,22 +3506,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376736767}
   m_CullTransparentMesh: 0
---- !u!1 &1416662706
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5197609791803745025}
-  m_Layer: 0
-  m_Name: Recovery GameObject (5197609791803745025)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1450559500
 GameObject:
   m_ObjectHideFlags: 0
@@ -4918,7 +4902,7 @@ MonoBehaviour:
   torres: {fileID: 905555847}
   SpawnL: {fileID: 730344027}
   SpawnR: {fileID: 1191233778}
-  FriendlyAirplaneo: {fileID: 1780658939816507498, guid: 02a499b91d6dc1d4aa503aa9f1948f8e, type: 3}
+  FriendlyAirplaneObj: {fileID: 1780658939816507498, guid: 02a499b91d6dc1d4aa503aa9f1948f8e, type: 3}
 --- !u!1 &1816792177
 GameObject:
   m_ObjectHideFlags: 0
@@ -6532,20 +6516,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123503181589817279}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &5197609791803745025
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416662706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}

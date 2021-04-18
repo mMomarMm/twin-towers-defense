@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject torres;
     public GameObject SpawnL;
     public GameObject SpawnR;
-    public GameObject FriendlyAirplaneo;
+    public GameObject FriendlyAirplaneObj;
     // Update is called once per frame
     void Start()
     {
@@ -20,22 +20,24 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             Time.timeScale = 0;
-            torres.SetActive(false);
             pauseMenu.SetActive(true);
         }
     }
     
     IEnumerator FriendlyAirplane()
     {
-        int r = Random.Range(1, 0);
-        yield return new WaitForSeconds(AddTimer.SpawnTime * 2 + 10 + r * 2);
-        if (r == 1)
+        while (AddTimer.difficulty != 1.2f) 
         {
-            Instantiate(FriendlyAirplaneo, SpawnL.transform);
-        }
-        else
-        {
-            Instantiate(FriendlyAirplaneo, SpawnR.transform);
+            int r = Random.Range(1, 0);
+            yield return new WaitForSeconds(AddTimer.SpawnTime * 2 * 10 + 50);
+            if (r == 1)
+            {
+                Instantiate(FriendlyAirplaneObj, SpawnL.transform);
+            }
+            else
+            {
+                Instantiate(FriendlyAirplaneObj, SpawnR.transform);
+            }
         }
     }
 }

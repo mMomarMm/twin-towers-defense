@@ -9,15 +9,15 @@ public class FriendlyAvion : MonoBehaviour
     Animator animator;
     public Rigidbody2D rb;
     public float speed = 2f;
-    private Vector2 Torres;
     private Vector3 Pointto;
+    private Vector3 Goto3;
     private Vector2 Goto;
     public GameObject sound;
 
     void Start()
     {
         //declaration
-        Torres = new Vector2(0, -6.71999979019165f);
+        StartCoroutine(ThisShouldChange());
         animator = GetComponent<Animator>();
         isDeadHash = Animator.StringToHash("isDead");
         bool isDead = animator.GetBool(isDeadHash);
@@ -30,7 +30,7 @@ public class FriendlyAvion : MonoBehaviour
     void Update()
     {
         //movement
-        if (transform.position != new Vector3(0, -6.71999979019165f, 0))
+        if (transform.position != Goto3)
         {
             transform.position = Vector2.MoveTowards(transform.position, Goto, speed * Time.deltaTime);
         }
@@ -49,11 +49,15 @@ public class FriendlyAvion : MonoBehaviour
         {
             Pointto = new Vector3(20.99f, 8.37f, 0);
             Goto = new Vector2(20.99f, 8.37f);
+            Goto3 = new Vector3(20.99f, 8.37f, 0);
+            transform.position = new Vector3(-20.99f, 8.37f, 0);
         }
         else if (other.name == "SpawnR")
         {
             Pointto = new Vector3(-20.99f, 8.37f, 0);
             Goto = new Vector2(-20.99f, 8.37f);
+            Goto3 = new Vector3(-20.99f, 8.37f, 0);
+            transform.position = new Vector3(20.99f, 8.37f, 0);
         }
         if (other.tag == "Balas")
         {
@@ -62,12 +66,14 @@ public class FriendlyAvion : MonoBehaviour
             turret_gun.startTimeBtwShots += 0.05f;
             Wturret_gun.startTimeBtwShots += 0.05f;
             Instantiate(sound, transform);
+            transform.position = Goto3;
+            StartCoroutine(ThisShouldChange());
         }
     }
 
     IEnumerator ThisShouldChange()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(50f);
         Destroy(gameObject);
     }
 }
