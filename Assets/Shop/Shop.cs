@@ -16,6 +16,8 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         TbuyButton.GetComponent<Image>().color = new Color32(91, 255, 32, 255);
+        SbuyButton.GetComponent<Image>().color = new Color32(91, 255, 32, 255);
+        BbuyButton.GetComponent<Image>().color = new Color32(91, 255, 32, 255);
     }
     public void BuyTurret()
     {

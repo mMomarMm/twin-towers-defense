@@ -83,7 +83,6 @@ public class Enemy : MonoBehaviour
             Instantiate(DollarEffect, DollarEffectway);
         }
         StartCoroutine(ThisShouldChange());
-        Destroy(gameObject);
         yield return null;
     }
 }
