@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
-    bool isPaused = false;
     // Start is called before the first frame update
     public void pauseGame()
     {
-        if (isPaused)
+        if (Time.timeScale == 0)
         {
             Time.timeScale = 1;
-            isPaused = false;
-        }
-        if (!isPaused)
+        } else
         {
             CameraShake.elapsed = 1f;
             Time.timeScale = 0;
-            isPaused = true;
         }
     }
 }
