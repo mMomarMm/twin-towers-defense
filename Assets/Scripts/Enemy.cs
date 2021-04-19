@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public float speed = 2f;
     private float x_axis;
     private Vector2 Torres;
+    bool canMove = true;
     void Start()
     {
         //declaration
@@ -32,7 +33,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         //movement
-        if (transform.position != new Vector3(0, -6.71999979019165f, 0))
+        if (canMove)
         {
             transform.position = Vector2.MoveTowards(transform.position, Torres, speed * Time.deltaTime);
         }
@@ -60,6 +61,7 @@ public class Enemy : MonoBehaviour
         {
             animator.SetBool(isDeadHash, true);
             StartCoroutine(GetDollarEffect());
+            canMove = false;
         }
         else if (other.CompareTag("Torres"))
         {

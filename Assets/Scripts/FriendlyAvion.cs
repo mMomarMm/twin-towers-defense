@@ -13,11 +13,15 @@ public class FriendlyAvion : MonoBehaviour
     private Vector3 Goto3;
     private Vector2 Goto;
     public GameObject sound;
+    private SpriteRenderer spriteRender;
+    bool canMove = true;
+    bool spawnedR = false;
+    bool spawnedL = false;
 
     void Start()
     {
         //declaration
-        StartCoroutine(ThisShouldChange());
+        spriteRender = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         isDeadHash = Animator.StringToHash("isDead");
         bool isDead = animator.GetBool(isDeadHash);
@@ -25,12 +29,34 @@ public class FriendlyAvion : MonoBehaviour
         {
             transform.parent = null;
         }
+        if (transform.position.x <= 1)
+        {
+            spawnedL = true;
+            Pointto = new Vector3(20.99f, 8.37f, 0);
+            Goto = new Vector2(20.99f, 8.37f);
+            transform.position = new Vector3(-20.99f, 8.37f, 0);
+        } else if (transform.position.x >= 1)
+        {
+            spawnedR = true;
+            spriteRender.flipY = true;
+            Pointto = new Vector3(-20.99f, 8.37f, 0);
+            Goto = new Vector2(-20.99f, 8.37f);
+            transform.position = new Vector3(20.99f, 8.37f, 0);
+        }
     }
 
     void Update()
     {
+        if (transform.position.x == -20.99f && spawnedR)
+        {
+            Destroy(gameObject);
+        }
+        else if (transform.position.x == 20.99f && spawnedL)
+        {
+            Destroy(gameObject);
+        }
         //movement
-        if (transform.position != Goto3)
+        if (canMove)
         {
             transform.position = Vector2.MoveTowards(transform.position, Goto, speed * Time.deltaTime);
         }
@@ -45,20 +71,6 @@ public class FriendlyAvion : MonoBehaviour
     //collision
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "SpawnL")
-        {
-            Pointto = new Vector3(20.99f, 8.37f, 0);
-            Goto = new Vector2(20.99f, 8.37f);
-            Goto3 = new Vector3(20.99f, 8.37f, 0);
-            transform.position = new Vector3(-20.99f, 8.37f, 0);
-        }
-        else if (other.name == "SpawnR")
-        {
-            Pointto = new Vector3(-20.99f, 8.37f, 0);
-            Goto = new Vector2(-20.99f, 8.37f);
-            Goto3 = new Vector3(-20.99f, 8.37f, 0);
-            transform.position = new Vector3(20.99f, 8.37f, 0);
-        }
         if (other.tag == "Balas")
         {
             animator.SetBool(isDeadHash, true);
@@ -66,14 +78,14 @@ public class FriendlyAvion : MonoBehaviour
             turret_gun.startTimeBtwShots += 0.05f;
             Wturret_gun.startTimeBtwShots += 0.05f;
             Instantiate(sound, transform);
-            transform.position = Goto3;
+            canMove = false;
             StartCoroutine(ThisShouldChange());
         }
     }
 
     IEnumerator ThisShouldChange()
     {
-        yield return new WaitForSeconds(50f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 }
