@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRender;
     public Rigidbody2D rb;
     public float speed = 2f;
+    public int Percent; //chance of newdollars
+    public bool ThisWeird; //is this airplane weird
     private float x_axis;
     private Vector2 Torres;
     bool canMove = true;
@@ -79,10 +81,19 @@ public class Enemy : MonoBehaviour
     //effects
     IEnumerator GetDollarEffect()
     {
-        Dollar.newdollars = Random.Range(2, -2);
-        if (Dollar.newdollars >= 1)
+        if (ThisWeird)
         {
+            Percent = 2;
+        }
+        else
+        {
+            Percent = Random.Range(2, -2);
+        }
+        if (Percent >= 2)
+        {
+            Dollar.newdollars = Percent;
             Instantiate(DollarEffect, DollarEffectway);
+            Percent = 0;
         }
         StartCoroutine(ThisShouldChange());
         yield return null;
